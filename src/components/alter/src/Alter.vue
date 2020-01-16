@@ -28,12 +28,16 @@ export default {
         type:{
             type:String,
             default:'info'
-        }
+        },
+        visibility:{
+            type:Boolean,
+            default:false
+        },
     },
 
     data(){
-        return function(){
-            //todo
+        return{
+            visibility
         }
     },
 
