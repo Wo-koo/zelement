@@ -29,7 +29,7 @@ export default {
             type:String,
             default:'info'
         },
-        visibility:{
+        visible:{
             type:Boolean,
             default:false
         },
@@ -37,7 +37,7 @@ export default {
 
     data(){
         return{
-            visibility
+            visible
         }
     },
 
