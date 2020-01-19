@@ -1,4 +1,4 @@
-import { Alert } from "./components/alert/index.js.js";
+import { Alert } from "./components/alert/index.js";
 
 const components = [
     Alert,
