@@ -21,6 +21,8 @@ const TYPE_CLASSES_MAP = {
 };
 
 export default {
+  name: 'ZAlert',
+  
   props: {
     title: {
       type: String,

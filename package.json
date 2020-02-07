@@ -1,8 +1,12 @@
 {
   "name": "zelement",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "main": "src/index.js",
+  "typings": "types/index.d.ts",
   "scripts": {
+    "bootstrap": "npm i",
+    "build:file":"node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
+    "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=developement webpack-dev-server --config build/webpack.demo.js & node build/bin/template.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
