@@ -1,3 +1,3 @@
 {
-    "Alert":"./src/components/alert/index.js"
+    "alert":"./src/components/alert/index.js"
 }

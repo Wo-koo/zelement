@@ -3,7 +3,7 @@
 var postcss = require('postcss');//postcss API
 var fs = require('fs');//node中的file system api
 var path = require('path');//node中的path system api
-var fontFile = fs.readFileSync(path.resolve(__dirname,'../../src/theme/src/icon.scss','utf-8'));
+var fontFile = fs.readFileSync(path.resolve(__dirname,'../../src/theme/src/icon.scss'),'utf-8');
 var nodes = postcss.parse(fontFile).nodes;
 
 var classList = [];
@@ -26,10 +26,16 @@ nodes.forEach((node)=>{
     if(arr && arr[1]){
         classList.push(arr[1]);
     }
+});
 
-    //debug code
-    console.log(classList);
-    
+classList.reverse();
+console.log(__dirname);
+fs.writeFile(path.resolve(__dirname,"../../example/icon.json"),JSON.stringify(classList),(err)=>{
+    // writeFile回调函数中一定要进行异常的处理，否则系统会比较难维护
+    if(err){
+        throw err;
+    }
+    console.log("icon.json file had been saved");
 });
 
 
