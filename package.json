@@ -6,7 +6,7 @@
   "scripts": {
     "bootstrap": "npm i",
     "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
-    "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=developement webpack-dev-server --config build/webpack.config.js & node build/bin/template.js",
+    "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=developement webpack-dev-server --config build/webpack.common.js & node build/bin/template.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -27,10 +27,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "progress-bar-webpack-plugin": "^2.1.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.10",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "eslintConfig": {
     "root": true,
