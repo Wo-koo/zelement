@@ -1,7 +1,7 @@
 <template>
   <transition name="z-alert-fade">
     <div :v-show="visible" role="alert" class="z-alert" :class="[typeClass]">
-      <i class="z-alter__icon" :class="[iconClass, isBigIcon]"></i>
+      <i class="z-alter__icon" :class="[iconClass]"></i>
       <div class="z-alter__content">
         <span class="z-alter__title">
           <slot name="title">{{ title }}</slot>
