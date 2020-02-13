@@ -5,12 +5,12 @@ import Alert from "./components/alert/index.js"
 
 const components = [
      Alert,
-    CollapseTransition
+    //CollapseTransition
 ];
 
 const install = function(Vue,opts={}){
     //locale.use(opt.locale);
-    locale.i18n(opt.i18n);//这里要搞清楚什么是i18n
+    //locale.i18n(opt.i18n);//这里要搞清楚什么是i18n
 
     components.forEach(component=>{
         Vue.component(component.name,component);
@@ -24,13 +24,13 @@ const install = function(Vue,opts={}){
         zIndex: opts.zIndex || 2000
     };
 
-    Vue.prototype.$loading = Loading.service;
-    Vue.prototype.$msgbox = MessageBox;
-    Vue.prototype.$alert = MessageBox.alert;
-    Vue.prototype.$confirm = MessageBox.confirm;
-    Vue.prototype.$prompt = MessageBox.prompt;
-    Vue.prototype.$notify = Notification;
-    Vue.prototype.$message = Message;
+    // Vue.prototype.$loading = Loading.service;
+    // Vue.prototype.$msgbox = MessageBox;
+    // Vue.prototype.$alert = MessageBox.alert;
+    // Vue.prototype.$confirm = MessageBox.confirm;
+    // Vue.prototype.$prompt = MessageBox.prompt;
+    // Vue.prototype.$notify = Notification;
+    // Vue.prototype.$message = Message;
 };
 
 /* istanbul ignore if */
@@ -39,11 +39,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.1.4',
-  locale: locale.use,
-  i18n: locale.i18n,
-  install,
-  CollapseTransition,
-  Loading,
+  version: '0.1.11',
+  // locale: locale.use,
+  // i18n: locale.i18n,
+  // install,
+  // CollapseTransition,
+  // Loading,
   Alert
 }
