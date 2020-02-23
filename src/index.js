@@ -16,13 +16,13 @@ const install = function(Vue,opts={}){
         Vue.component(component.name,component);
     });
 
-    Vue.use(InfiniteScroll);
-    Vue.use(Loading.directive);
+    // Vue.use(InfiniteScroll);
+    // Vue.use(Loading.directive);
 
-    Vue.prototype.$ELEMENT = {
-        size: opts.size || '',
-        zIndex: opts.zIndex || 2000
-    };
+    // Vue.prototype.$ELEMENT = {
+    //     size: opts.size || '',
+    //     zIndex: opts.zIndex || 2000
+    // };
 
     // Vue.prototype.$loading = Loading.service;
     // Vue.prototype.$msgbox = MessageBox;
@@ -36,13 +36,17 @@ const install = function(Vue,opts={}){
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
+  console.log('install function done');
+}
+else{
+  console.log('install function fails');
 }
 
 export default {
-  version: '0.1.11',
+  version: '0.1.19',
   // locale: locale.use,
   // i18n: locale.i18n,
-  // install,
+     install,
   // CollapseTransition,
   // Loading,
   Alert

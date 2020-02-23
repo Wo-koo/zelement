@@ -36,10 +36,6 @@ export default {
       type: String,
       default: "info"
     },
-    visible: {
-      type: Boolean,
-      default: false
-    }
   },
 
   data() {
