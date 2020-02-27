@@ -29,7 +29,7 @@ const webpackConfig = {
     },
     // config webpack-server 
     devServer: {
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 8085,
         publicPath: '/',
         hot: true
