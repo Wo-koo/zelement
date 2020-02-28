@@ -30,7 +30,7 @@ nodes.forEach((node)=>{
 
 classList.reverse();
 console.log(__dirname);
-fs.writeFile(path.resolve(__dirname,"../../example/icon.json"),JSON.stringify(classList),(err)=>{
+fs.writeFile(path.resolve(__dirname,"../../examples/icon.json"),JSON.stringify(classList),(err)=>{
     // writeFile回调函数中一定要进行异常的处理，否则系统会比较难维护
     if(err){
         throw err;

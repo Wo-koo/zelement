@@ -107,7 +107,7 @@ export default {
     },
 
     isBoldTitle(){
-      return this.description || tyhis.$slots.default ? 'is-bold':'';
+      return this.description || this.$slots.default ? 'is-bold':'';
     }
   }
 };
