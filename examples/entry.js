@@ -23,4 +23,4 @@ router.afterEach(route=>{
 new Vue({
     ...entry,
     router,
-}).$mount('#app');
+}).$mount('#app'); // this place throw can't find error
