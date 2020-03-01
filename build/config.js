@@ -27,7 +27,7 @@ Object.keys(Components).forEach(function(key) {
 //   externals[`element-ui/src/transitions/${file}`] = `element-ui/lib/transitions/${file}`;
 // });
 
-externals = [Object.assign({
+externals = [Object.assign({ // 利用object.assign方法将属性进行合并
   vue: 'vue'
 }, externals), nodeExternals()];
 
@@ -35,7 +35,7 @@ exports.externals = externals;
 
 exports.alias = {
   main: path.resolve(__dirname, '../src'),
-  packages: path.resolve(__dirname, '../packages'),
+  components: path.resolve(__dirname, '../src/components'),
   examples: path.resolve(__dirname, '../examples'),
   'zelement': path.resolve(__dirname, '../')
 };
