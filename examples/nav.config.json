@@ -1,18 +1,1 @@
-{
-  "zh-CN": [
-    {
-      "name": "组件",
-      "groups": [
-        {
-          "groupName": "Notice",
-          "list": [
-            {
-              "path": "/alert",
-              "title": "Alert 警告"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+{"zh-CN":[{"name":"components","groups":[{"groupName":"Notice","list":[{"path":"/alert","title":"Alert 警告"},{"path":"/button","title":"Button 按钮"}]}]}]}

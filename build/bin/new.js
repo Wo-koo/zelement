@@ -48,13 +48,14 @@ const Files = [
 
 // add new component to components.json
 const componentFile = require('../../components.json');
-if (componentFile[componentname]) {
-    console.error(`${componentname} component already exit`);
-    process.exit(`${componentname} already exit`);
+if (componentFile[componentName]) {
+    console.error(`${componentName} component already exit`);
+    process.exit(`${componentName} already exit`);
 }
-componentFile[componentname] = `./src/components/${componentname}/index.js`;
+
+componentFile[componentName] = `./src/components/${componentName}/index.js`;
 fileSave(path.join(__dirname,'../../components.json'))
-    .write(JSON.stringify(componentFile,null," "),'utf8')
+    .write(JSON.stringify(componentFile,null,'   '),'utf8')
     .end('\n');
 
 // to create new component
@@ -63,5 +64,21 @@ Files.forEach(item=>{
         .write(item.content,'utf8')
         .end('\n');
 });
+
+// to add new component to nav.config.json 这个部分有待改进，因为编码还是有点僵硬，无法进行精确的匹配插入
+const navConfigFile = require('../../examples/nav.config.json');
+Object.keys(navConfigFile).forEach(lang=>{
+    let groups = navConfigFile[lang][0].groups;
+    groups[groups.length - 1].list.push({
+        path: `/${componentName}`,
+        title: `${ComponentName} ${componentChineseName}`
+    })
+});
+
+fileSave(path.join(__dirname , '../../examples/nav.config.json'))
+    .write(JSON.stringify(navConfigFile,null,''),'utf8')
+    .end('\n');
+
+console.log('Done');
 
 
