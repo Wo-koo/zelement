@@ -64,4 +64,15 @@ Files.forEach(item=>{
         .end('\n');
 });
 
+// to create component
+
+Files.forEach(file=>{
+    fileSave(path.join(componentPath),file.filename)
+    .write(file.content,'utf8')
+    .end('\n');
+})
+
+// add to nav.config.json
+
+const navConfigFile = require('../../examples/nav.config.json');
 
