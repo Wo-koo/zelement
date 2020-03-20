@@ -2,11 +2,16 @@ console.log();
 
 process.on('exit',exitCode=>{ // node进程退出时触发
     console.log('exit code is ' + exitCode);
+    if (exitCode && exitCode == 0) {
+        console.log("new.js execute successfully");
+    } else {
+        console.log("new.js execute failed");
+    }
 });
 
 if (!process.argv[2]) {
     console.error('[component name] - please enter new component name');
-    process.exit("component name null");
+    process.exit(1); // exit code 0: success, 1:failure
 }
 
 const path = require('path');
@@ -50,7 +55,7 @@ const Files = [
 const componentFile = require('../../components.json');
 if (componentFile[componentName]) {
     console.error(`${componentName} component already exit`);
-    process.exit(`${componentName} already exit`);
+    process.exit(1);
 }
 
 componentFile[componentName] = `./src/components/${componentName}/index.js`;
