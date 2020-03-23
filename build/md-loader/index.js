@@ -41,4 +41,29 @@ module.exports = function(source){
         commentEnd = content.indexOf(endTag,commentStart+ startTagLen);
     }
 
-}
+    // 这里搞不太懂为什么要有pageScript这个东西
+    let pageScript = '';
+    if(componentsString){
+        pageScript = `<script>
+        export default{
+            name: 'component-doc',
+            components:{
+                ${componentsString}
+            }
+        }
+        </script>`;
+    } else if (content.indexOf('<script>') === 0) {
+        start = content.indexOf('</script>') + '</script>'.length;
+        pageScript = content.slice(0,start);        
+    }
+
+    output.push(content.slice(start));
+    return `
+    <template>
+        <section class="content element-doc">
+            ${output.join('')}
+        </section>
+    </template>
+    ${pageScript}
+    `;
+};
