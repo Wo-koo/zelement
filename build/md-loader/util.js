@@ -11,18 +11,22 @@ function stripScript(content){
 
 // 剥离样式部分
 function stripStyle(content){
-    let style = content.match(/<([css,scss])([\s\S])+<\/\1>/);
-    return style && style[2] ?? style[2] : '';
+    let style = content.match(/<(style)\s*>([\s\S]+)+<\/\1>/);
+    return style && style[2] ? style[2].trim() : '';
 }
 
-// 剥离模版部分
+// 剥离出模版部分，剔除其他部分，剩余的就是template的部分
 function stripTemplate(content){
-
+    content = content.trim();
+    if (!content) {
+        return content;
+    }
+    return content.replice(/<(style|script)>[\s\S]+<\/\1>/,'').trim();
 }
 
-// ?
+// 这个地方不是很清楚，按行分割以后，套用表达式语句是干嘛用的？
 function pad(source){
-
+    return source.split(/\r?\n/).map(line=>`${line}`).join('\n');
 }
 
 function generatorInLineComponentText(template,script){
