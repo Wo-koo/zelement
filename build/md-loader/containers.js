@@ -1,0 +1,24 @@
+const mdContainer = require('markdown-it-container');
+
+module.exports = md =>{
+    md.use(mdContainer,'demo',{
+        validate(params){
+            return params.trim().mathch(/^demo\s*(.*)$/);
+        },
+        render(tokens,idx){
+            var m = tokens[idx].info.trim().mathch(/^demo\s*(.*)$/);
+            if (tokens[idx].nesting === 1) {
+                // opening tag
+                const description = m && m.length > 1 ?m[1]:"";
+                const content = tokens[idx+1].type === 'fence' ? tokens[idx+1].content:"";
+                return `<demo-block>
+                ${description?`<div>${md.render(description)}</div>`:""}
+                <!--zelement-demo:${content}:zelement-demo-->`;
+            }
+            // closing tag
+            return '</demo-block>'
+        },
+    });
+    md.use(mdContainer,'tip');
+    md.use(mdContainer,'warning');
+};
