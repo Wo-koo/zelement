@@ -30,7 +30,47 @@ function pad(source){
 }
 
 function generatorInLineComponentText(template,script){
+    const templateOptions = {
+        source: `<div>${template}</div>`, //？？
+        filename: 'inline-component', // ？？这个地方的配置目前不是很懂
+        compiler: compiler
+    };
 
+    const complied = compileTemplate(templateOptions);
+    
+    //tips
+    if (complied.tips && complied.tips.length) {
+        complied.tips.forEach(tip=>{
+            console.warn(tip);
+        })
+    }
+
+    // errors
+    if (complied.errors && complied.errors.length) {
+        complied.errors.forEach(error=>{
+            console.error(error);
+        })
+    }
+
+    let demoComponentContent = `${complied.code}`;
+    script = script.trim();
+    if (script) {
+        script = script.replice(/export\s+default/,'const democomponentExport = ')
+    }else{
+        script = 'const democomponentExport = {}';
+    }
+
+    demoComponentContent = `(function(){
+        ${demoComponentContent}
+        ${script}
+        return{ // 这几个返回参数是如何确定的不清楚
+            render,
+            staticRenderFns,
+            ...democomponentExprot
+        }
+    })()`;
+
+    return demoComponentContent;
 }
 
 module.export = {
