@@ -41,7 +41,7 @@ module.exports = function(source){
         commentEnd = content.indexOf(endTag,commentStart+ startTagLen);
     }
 
-    // 这里搞不太懂为什么要有pageScript这个东西
+    // 这里搞不太懂为什么要有pageScript这个东西,需要打断点查看
     let pageScript = '';
     if(componentsString){
         pageScript = `<script>
