@@ -6,8 +6,8 @@
 <template>
     <div class="banner">
         <div class="banner_desc">
-            <h1>高性能组件</h1>
-            <p>基于Vue2.0的高性能组件库</p>
+            <h1><%= 1></h1>
+            <p><%= 2></p>
         </div>
     </div>
 </template>

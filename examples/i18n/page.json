@@ -3,22 +3,11 @@
         "lang": "zh-CN",
         "pages":{
             "index":{
-                "1": "性能工具",
-                "2": "基于 Vue2.0的组件库",
+                "1": "高性能组件",
+                "2": "基于Vue2.0的高性能组件库",
                 "lang": "zh-CN"
             },
-            "component":{},
-            "theme":{
-                "1": "官方主题",
-                "2": "我的主题",
-                "3": "主题名称"
-            },
-            "theme-preview":{
-
-            },
-            "theme-nav":{},
-            "changelog":{},
-            "design":{}
+            "component":{}
         }
     }
 ]
