@@ -89,9 +89,13 @@ route.push({
     component: require('./play/index')
 });
 
-route.push({
-    path: '/',
-    redirect: 'zh-CN'
-});
+const defaultPath = 'zh-CN';
 
+route = route.concat([{
+    path: '/',
+    redirect: defaultPath
+  }, {
+    path: '*',
+    redirect: defaultPath
+  }]);
 export default route;
