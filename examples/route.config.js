@@ -5,7 +5,7 @@ const langs = require('./i18n/route');
 const LOAD_MAP = {
     'zh-CN': name=>{
         return r => require.ensure([],()=> // webpack require.ensure
-            require(`./pages/zh-CN/${name}.vue`),
+            r(require(`./pages/zh-CN/${name}.vue`)),
             error=>console.error(error),
             'zh-CN');
     }
@@ -17,8 +17,8 @@ const load = (lang,componentName)=>{
 
 const LOAD_DOCS_MAP = {
     'zh-CN':name=>{
-        return r => require.ensure([],
-            ()=> require(`./docs/zh-CN${name}.md`),
+        return r => require.ensure([],()=>
+            r(require(`./docs/zh-CN${name}.md`)),
             error => console.error(error),
             'zh-CN');
     }
@@ -34,7 +34,7 @@ const registerRoute = navConfig => {
         let navs = navConfig[lang];
         route.push({ // 这里是vue的路由配置形式
             path:`/${lang}/component`,
-            redirect:`${lang}/component/installation`,
+            redirect:`${lang}/component/alert`,
             component:load(lang,'component'),
             children:[]
         });
@@ -51,7 +51,7 @@ const registerRoute = navConfig => {
     });
 
     function addRoute(page, lang, index){
-        const component = load(lang,page.path);
+        const component = loadDocs(lang,page.path);
         let child = {
             path: page.path.slice(1),
             meta:{
@@ -89,7 +89,7 @@ route.push({
     component: require('./play/index')
 });
 
-const defaultPath = 'zh-CN';
+const defaultPath = '/zh-CN';
 
 route = route.concat([{
     path: '/',
@@ -98,4 +98,5 @@ route = route.concat([{
     path: '*',
     redirect: defaultPath
   }]);
+
 export default route;

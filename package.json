@@ -17,6 +17,9 @@
     "json-templater": "^1.2.0",
     "uppercamelcase": "^3.0.0"
   },
+  "peerDependencies": {
+    "vue": "^2.5.17"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-eslint": "^4.2.2",
