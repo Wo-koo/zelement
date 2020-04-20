@@ -4,6 +4,6 @@ import ZElement from 'main/index.js';
 
 Vue.use(ZElement);
 
-new Vue({
+new Vue({  // eslint-disable-line
     render: h => h(App)
 }).$mount('#app');

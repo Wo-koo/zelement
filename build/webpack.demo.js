@@ -96,6 +96,7 @@ const webpackConfig = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
+            template: './examples/index.tpl',
             filename: './index.html',
         }),
         new VueLoaderPlugin(),

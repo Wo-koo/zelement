@@ -1,11 +1,11 @@
 <template>
-    <div id="app">
-        <h1>welcom to zelement</h1>
-    </div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'app',
-}
+  name: "app"
+};
 </script>
