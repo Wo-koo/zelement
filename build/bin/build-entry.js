@@ -56,7 +56,7 @@ export default {
   version: '{{version}}',
   // locale: locale.use,
   // i18n: locale.i18n,
-  // install,
+  install,
   // CollapseTransition,
   // Loading,
 {{list}}
