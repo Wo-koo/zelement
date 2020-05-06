@@ -1,0 +1,18 @@
+@import 'config.scss';
+
+/* ---- css中的BEM的命名方式：block element and modify ---- */
+@mixin b($block){ // 用来修饰block 的相关样式
+ $B: $namespace + '-' + $block !global;
+  
+ .#{$B}{ // 这个地方是指class = #{$B} 的选择器
+      @content; //@content是一个占位符，用@mixin b()中的内容来填充@conent的占位。
+  }
+}
+
+@mixin when($state) {
+  @at-root { // @at-root 用于将选择器置于文档的根 https://sass-lang.com/documentation/at-rules/at-root
+    &.#{$state-prefix + $state}{ // & 是一个连体符，用来标识嵌套
+      @content;
+    }
+  }
+}
