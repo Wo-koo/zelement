@@ -9,6 +9,15 @@
   }
 }
 
+///
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier{
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+}
+
 @mixin when($state) {
   @at-root { // @at-root 用于将选择器置于文档的根 https://sass-lang.com/documentation/at-rules/at-root
     &.#{$state-prefix + $state}{ // & 是一个连体符，用来标识嵌套
