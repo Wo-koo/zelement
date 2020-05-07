@@ -1,0 +1,31 @@
+@import "mixins/mixins";
+
+@include b(alert){
+    width: 100%;
+    padding: $--alert-padding;
+    margin: 0em;
+    box-sizing: border-box; 
+    border-radius: $--alert-border-radius;
+    position: relative;
+    background-color: $--color-white;
+    overflow: hidden;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity .2s;
+
+    @include when(light){
+        .z-alert__closebtn{
+            color: $--color-text-placeholder;
+        }
+    }
+
+    @include when(dark){
+        .z-alert__closebtn{
+            color: $--color-white;
+        }
+        .z-alert__description{
+            color: $--color-white;
+        }
+    }
+}
