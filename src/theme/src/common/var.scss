@@ -6,3 +6,9 @@ $--color-white: #ffffff;
 /* alert */
 $--alert-padding: 8px 16px;
 $--alert-border-radius: 2px;
+
+$--color-success: #67C23A !default;
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+
+$--color-info: #909399;
+$--color-info-lighter:mix($--color-white, $--color-info, 90%) !default; // mix() is a scss function ,which to mix two colors.

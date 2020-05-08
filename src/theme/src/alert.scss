@@ -32,7 +32,28 @@
 
     @include m(success){
         &.is-light{
-            background-color: ;
+            background-color: $--color-success-lighter;
+            color: $--color-success;
+
+            .z-alert__description{
+                color: $--color-success;
+            }
+        }
+
+        &.is-dark{
+            background-color: $--color-success;
+            color: $--color-white;
+        }
+    }
+
+    @include m(info){
+        &.is-light{
+            background-color: $--color-info-lighter;
+            color: $--color-info;
+
+            .z-alert__description{
+                color: $--color-info;
+            }
         }
     }
 }

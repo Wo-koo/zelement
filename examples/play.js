@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './play/index.vue';
 import ZElement from 'main/index.js';
 import ElementUI from 'element-ui';
-import "../src/theme/src/alert.scss";
+import "../src/theme/src/index.scss";
 
 Vue.use(ZElement);
 Vue.use(ElementUI);
