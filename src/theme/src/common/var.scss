@@ -16,3 +16,5 @@ $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 $--color-info: #909399;
 $--color-info-lighter:mix($--color-white, $--color-info, 90%) !default; // mix() is a scss function ,which to mix two colors.
 
+$--color-warning: #E6A23C !default;
+$--color-warning-lighter:mix($--color-white,$--color-warning, 90%) !default;

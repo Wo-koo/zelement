@@ -29,10 +29,10 @@
 
 <script>
 const TYPE_CLASSES_MAP = {
-  info: "z-icon--info",
-  success: "z-icon--success",
-  warning: "z-icon--warning",
-  error: "z-icon--error"
+  info: "z-icon-info",
+  success: "z-icon-success",
+  warning: "z-icon-warning",
+  error: "z-icon-error"
 };
 
 export default {
@@ -57,7 +57,7 @@ export default {
     },
     showIcon: {
       type: Boolean,
-      default: false
+      default: true
     },
     center: {
       type: Boolean,

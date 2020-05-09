@@ -1,4 +1,4 @@
-@import '../common/var.scss'; // scss中的module概念
+@import './common/var.scss'; // scss中的module概念
 
 // @font-face是css3中的概念，src资源引用的是本地的资源，这里借用了element的本地资源，在目录fonts下
 @font-face {
@@ -10,7 +10,7 @@
   }
 
   // css selector 对应设置class
-  // [class^=] 选择以el-icon-开头的类，[class*=]选择class中包含el-icon-的子字符串的类
+  // [class^=] 选择以z-icon-开头的类，[class*=]选择class中包含z-icon-的子字符串的类
   [class^="z-icon-"], [class*=" z-icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'element-icons' !important;

@@ -56,4 +56,11 @@
             }
         }
     }
+
+    @include m(warning){
+        &.is-light{
+            background-color: $--color-warning-lighter;
+            color: $--color-warning;
+        }
+    }
 }
