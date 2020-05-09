@@ -1,3 +1,6 @@
+$--font-path:'fonts' !default;
+$--font-display:'auto' !default; // 这个的!default 是怎么含义？
+
 $--color-text-placeholder: #c0c4cc;
 
 /* fill */
@@ -12,3 +15,4 @@ $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 
 $--color-info: #909399;
 $--color-info-lighter:mix($--color-white, $--color-info, 90%) !default; // mix() is a scss function ,which to mix two colors.
+

@@ -1,7 +1,6 @@
 <template>
     <div style="margin: 20px">
-        <z-alert title='titleTxt'/>
-        <el-alert title='element alert message' type='success'/>
+        <z-alert title='ZAlertTest' description='This is an message from ZAlert'/>
     </div>
 </template>
 

@@ -57,11 +57,11 @@ export default {
     },
     showIcon: {
       type: Boolean,
-      default: true
+      default: false
     },
     center: {
       type: Boolean,
-      default: true
+      default: false
     },
     closeable: {
       type: Boolean,
