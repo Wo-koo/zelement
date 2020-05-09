@@ -2,9 +2,9 @@
 
 /* ---- css中的BEM的命名方式：block element and modify ---- */
 @mixin b($block){ // 用来修饰block 的相关样式
- $B: $namespace + '-' + $block !global;
+ $B: $namespace + '-' + $block !global; // 对于alert会生成 z-alert的class name
   
- .#{$B}{ // 这个地方是指class = #{$B} 的选择器
+ .#{$B}{ // 这个地方是指class = $B 的选择器,#{}是scss中的rule style
       @content; //@content是一个占位符，用@mixin b()中的内容来填充@conent的占位。
   }
 }

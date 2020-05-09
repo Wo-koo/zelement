@@ -4,7 +4,7 @@
       v-show="visible"
       role="alert"
       class="z-alert"
-      :class="[typeClass,center?'is-center':'is-'+effect]"
+      :class="[typeClass, center ? 'is-center': '', 'is-'+ effect]"
     >
       <i class="z-alert__icon" :class="[iconClass,isBigIcon]" v-if="showIcon"></i>
       <div class="z-alert__content">
@@ -29,10 +29,10 @@
 
 <script>
 const TYPE_CLASSES_MAP = {
-  info: "z-icon-info",
-  success: "z-icon-success",
-  warning: "z-icon-warning",
-  error: "z-icon-error"
+  info: "z-icon--info",
+  success: "z-icon--success",
+  warning: "z-icon--warning",
+  error: "z-icon--error"
 };
 
 export default {
@@ -55,25 +55,28 @@ export default {
       type: String,
       default: ""
     },
-    showIcon:{
+    showIcon: {
       type: Boolean,
-      default: true,
+      default: true
     },
-    center:{
+    center: {
       type: Boolean,
-      default: true,
+      default: true
     },
-    closeable:{
+    closeable: {
       type: Boolean,
-      default: true,
+      default: true
     },
-    closeText:{
+    closeText: {
       type: String,
-      default: "",
+      default: ""
     },
-    effect:{
+    effect: {
       type: String,
-      default: 'light',
+      default: "light",
+      validator:function(value){
+        return ['light','dark'].indexOf(value) !== -1;
+      }
     }
   },
 
@@ -93,7 +96,7 @@ export default {
 
   computed: {
     typeClass: function() {
-      return `z-alert-${this.type}`;
+      return `z-alert--${this.type}`;
     },
 
     iconClass: function() {
@@ -102,12 +105,12 @@ export default {
 
     // why not put 'isBigIcon' in props ?
     // answer：因为在需求上是：当description不为empty时，图标就成为大图标，title加粗。
-    isBigIcon(){
-      return this.description || this.$slots.default ? 'is-big':'';
+    isBigIcon() {
+      return this.description || this.$slots.default ? "is-big" : "";
     },
 
-    isBoldTitle(){
-      return this.description || this.$slots.default ? 'is-bold':'';
+    isBoldTitle() {
+      return this.description || this.$slots.default ? "is-bold" : "";
     }
   }
 };
