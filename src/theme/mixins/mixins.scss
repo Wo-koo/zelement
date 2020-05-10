@@ -9,6 +9,21 @@
   }
 }
 
+@mixin e($element) {
+  $E: $element !global; // 大写的表示全局变量
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element{
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + "," }
+  }
+
+  @at-root{
+    #{$currentSelector}{
+      @content;
+    }
+  }
+}
+
 ///
 @mixin m($modifier) {
   $selector: &;
@@ -26,7 +41,7 @@
 
 @mixin when($state) {
   @at-root { // @at-root 用于将选择器置于文档的根 https://sass-lang.com/documentation/at-rules/at-root
-    &.#{$state-prefix + $state}{ // & 是一个连体符，用来标识嵌套
+    &.#{$state-prefix + $state}{ // & 是parent selector
       @content;
     }
   }

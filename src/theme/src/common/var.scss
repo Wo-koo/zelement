@@ -1,20 +1,26 @@
 $--font-path:'fonts' !default;
 $--font-display:'auto' !default; // 这个的!default 是怎么含义？
 
-$--color-text-placeholder: #c0c4cc;
+$--color-text-placeholder: #c0c4cc !default;
 
 /* fill */
-$--color-white: #ffffff;
-
+$--color-white: #ffffff !default;
+$--border-radius-base: 2px !default;
 /* alert */
-$--alert-padding: 8px 16px;
-$--alert-border-radius: 2px;
+$--alert-padding: 8px 16px !default;
+$--alert-border-radius: $--border-radius-base !default;
 
 $--color-success: #67C23A !default;
 $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 
-$--color-info: #909399;
+$--color-info: #909399 !default;
 $--color-info-lighter:mix($--color-white, $--color-info, 90%) !default; // mix() is a scss function ,which to mix two colors.
 
 $--color-warning: #E6A23C !default;
 $--color-warning-lighter:mix($--color-white,$--color-warning, 90%) !default;
+
+$--alert-icon-size: 16px !default;
+$--alert-icon-large-size: 28px !default;
+$--alert-close-font-size: 12px !default;
+$--alert-title-font-size: 13px !default;
+$--alert-description-font-size: 12px !default;
