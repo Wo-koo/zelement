@@ -1,9 +1,22 @@
 <template>
-  <div class="z-button"></div>
+  <button 
+  class="z-button"
+  :type="nativeType">
+
+  </button>
 </template>
         
-        <script>
+
+<script>
 export default {
-  name: "ZButton"
+  name: "ZButton",
+
+  props:{
+    type:{
+      type: String,
+      default: "default",
+    },
+    
+  }
 };
 </script>
