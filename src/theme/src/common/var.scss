@@ -19,6 +19,9 @@ $--color-info-lighter:mix($--color-white, $--color-info, 90%) !default; // mix()
 $--color-warning: #E6A23C !default;
 $--color-warning-lighter:mix($--color-white,$--color-warning, 90%) !default;
 
+$--color-error: #F56C6C !default;
+$--color-error-lighter: mix($--color-white, $--color-error,90%);
+
 $--alert-icon-size: 16px !default;
 $--alert-icon-large-size: 28px !default;
 $--alert-close-font-size: 12px !default;

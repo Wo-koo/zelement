@@ -4,7 +4,7 @@
 @include b(alert){
     width: 100%;
     padding: $--alert-padding;
-    margin: 0em;
+    margin: 1em;
     box-sizing: border-box; 
     border-radius: $--alert-border-radius;
     position: relative;
@@ -64,6 +64,17 @@
 
             .z-alert__description{
                 color: $--color-info;
+            }
+        }
+    }
+
+    @include m(error){
+        &.is-light{
+            background-color: $--color-error-lighter;
+            color: $--color-error;
+
+            .z-alert__description{
+                color: $--color-error;
             }
         }
     }

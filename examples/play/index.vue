@@ -1,6 +1,9 @@
 <template>
     <div style="margin: 20px">
         <z-alert title='ZAlertTest' description='This is an message from ZAlert'/>
+        <z-alert type='success' title='ZAlertTest' description='This is an message from ZAlert'/>
+        <z-alert type='error' title='ZAlertTest' description='This is an message from ZAlert'/>
+        <z-alert type='warning' title='ZAlertTest' description='This is an message from ZAlert'/>
     </div>
 </template>
 
