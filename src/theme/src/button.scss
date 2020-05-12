@@ -1,0 +1,8 @@
+@import "../mixins/mixins.scss";
+
+@include b(button){
+    background-color: blue;
+    color: white;
+    width: 16px;
+    height: 16px;
+}

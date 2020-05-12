@@ -1,6 +1,7 @@
 <template>
   <button 
   class="z-button"
+  @click="handleClick"
   :class="[ 
   type ? 'z-button--' : '',
   size ? 'z-button--' : '',
@@ -13,6 +14,7 @@
   ]">
   <i class="z-icon-loading" v-if="loading"/> 
   <i :class="icon" v-if="icon && !loading"/>
+  <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
         
@@ -30,10 +32,20 @@ export default {
       type: String,
       default: 'normal',
     },
+    icon:{
+      type: String,
+      default: ''
+    },
     disabled:Boolean,
     plan: Boolean,
     circle: Boolean,
     round: Boolean,
+    loading: Boolean,
+  },
+  methods:{
+    handleClick(args){
+      this.$emit('click',args);
+    }
   }
 };
 </script>
