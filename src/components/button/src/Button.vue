@@ -11,7 +11,8 @@
     'is-round': round,
   }
   ]">
-
+  <i class="z-icon-loading" v-if="loading"/> 
+  <i :class="icon" v-if="icon && !loading"/>
   </button>
 </template>
         
@@ -33,7 +34,6 @@ export default {
     plan: Boolean,
     circle: Boolean,
     round: Boolean,
-
   }
 };
 </script>
