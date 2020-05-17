@@ -3,8 +3,8 @@
   class="z-button"
   @click="handleClick"
   :class="[ 
-  type ? 'z-button--' : '',
-  size ? 'z-button--' : '',
+  type ? 'z-button--' + type : '',
+  size ? 'z-button--' + size : '',
   {
     'is-disabled': disabled,
     'is-plan': plan,
@@ -22,6 +22,15 @@
 <script>
 export default {
   name: "ZButton",
+
+  inject:{// 提供类似于context的概念，但是在这里是干嘛的暂时不清楚设计目的。
+    zForm:{
+      default:''
+    },
+    zFormItem:{
+      default:''
+    }
+  },
 
   props:{
     type:{
@@ -42,9 +51,14 @@ export default {
     round: Boolean,
     loading: Boolean,
   },
+  computed:{
+    size(){
+      return this.size || 
+    }
+  },
   methods:{
     handleClick(args){
-      this.$emit('click',args);
+      this.$emit('click',args); // $emit代表什么
     }
   }
 };
