@@ -52,8 +52,11 @@ export default {
     loading: Boolean,
   },
   computed:{
-    size(){
-      return this.size || 
+    buttonSize(){
+      return this.size
+    },
+    buttonDisabled(){
+      return this.disabled;
     }
   },
   methods:{
