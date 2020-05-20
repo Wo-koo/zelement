@@ -9,22 +9,22 @@
     line-height: 1;// 设置行高
     display: inline-block;
     vertical-align: middle;
-    border: 0 ;
+    border: 0;
     border-radius: $--border-radius-base;
     font-size: inherit;
     font-family: inherit;
     color: $--color-text;
 
-    &.z-button--default{
-        box-shadow:0 0 0 1px #ebebeb inset, 0 8px 0 0 $--color-grey;
-        &:active{
-            background-color: mix($--color-whiteSmoke,$--color-grey,80%);
-            transition: translate(0,0.25em);
-        }
+    &:active{
+        top: 2px;
     }
-
-    &:hover{
-        background-color: mix($--color-whiteSmoke, $--color-grey, 90%);
-        
+    &.z-button--default{
+        box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.1) inset,
+        0 8px 0 0 #bebebe , 0 8px 8px 1px rgba(0,0,0,.2);
+        &:active{
+            background-color: $--color-white;
+            box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,.15) inset,
+            0 1px 3px 1px rgba(0,0,0,.2);
+        }
     }
 }
