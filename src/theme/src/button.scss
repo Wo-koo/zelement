@@ -1,22 +1,26 @@
 @import "../mixins/mixins.scss";
 
 @include b(button){
-    background-color:$--color-whiteSmoke;
+    background-color:$--color-white;
     position: relative;
     top: -6px;
+    margin: 5px;
+    box-sizing: border-box;// 盒子模型中的border-box模型
+    line-height: 1;// 设置行高
     display: inline-block;
     vertical-align: middle;
+    border: 0 ;
     border-radius: $--border-radius-base;
     font-size: inherit;
     font-family: inherit;
     color: $--color-text;
-    height: 100%;
 
     &.z-button--default{
-        box-shadow: 0 0 0 1px #ebebeb inset, 
-        0 0 0 2px rgba(255, 255, 255, 0.10) inset, 
-        0 8px 0 0 #BEBEBE, 
-        0 8px 8px 1px rgba(0, 0, 0, .2);
+        box-shadow:0 0 0 1px #ebebeb inset, 0 8px 0 0 $--color-grey;
+        &:active{
+            background-color: mix($--color-whiteSmoke,$--color-grey,80%);
+            transition: translate(0,0.25em);
+        }
     }
 
     &:hover{

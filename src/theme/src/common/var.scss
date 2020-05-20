@@ -1,7 +1,7 @@
 /* color common various */
 $--color-white: #ffffff !default;
 $--color-whiteSmoke: #F5F5F5 !default;
-$--color-grey: #1c1c1c;
+$--color-grey: #e8e8e8;
 
 /* shape helps */
 $--border-radius-base: 4px !default;
@@ -12,7 +12,7 @@ $accent: 'light' !default;
 $--font-path:'fonts' !default;
 $--font-display:'auto' !default; // 这个的!default 是怎么含义？
 
-$--color-text: $--color-grey;
+$--color-text: #1c1c1c;
 $--color-text-placeholder: #c0c4cc !default;
 
 /* alert */
