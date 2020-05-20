@@ -8,13 +8,15 @@
     box-sizing: border-box; 
     border-radius: $--alert-border-radius;
     position: relative;
-    background-color: $--color-white;
+    background-color: #f9f9f9;
     overflow: hidden;
     opacity: 1;
     display: flex;
     align-items: center;
     transition: opacity .2s;
-
+    box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,.1) inset,
+                0 2px 0 0 #bebebe, 0 2px 2px 2px rgba(0,0,0,.25) ;
+    
     @include when(light){
         .z-alert__closebtn{
             color: $--color-text-placeholder;
@@ -32,9 +34,8 @@
 
     @include m(success){
         &.is-light{
-            background-color: $--color-success-lighter;
             color: $--color-success;
-
+            background-color: $--color-success-lighter;
             .z-alert__description{
                 color: $--color-success;
             }
@@ -82,7 +83,8 @@
     @include e(icon){
         font-size: $--alert-icon-size;
         width: $--alert-icon-size;
-        
+        border-radius: $--alert-icon-size;
+        border:0;
         @include when(big){
             font-size: $--alert-icon-large-size;
             width: $--alert-icon-large-size;
