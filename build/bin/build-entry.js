@@ -1,3 +1,13 @@
+/* 
+ build-entry.js 这个文件主要处理内容是生成入口文件
+ 其中主要采用的是技术是
+ 1: 模版代码 template codes （js中的反引号编写的模版）
+ 2: 模版渲染 template render （引入的是json-template/string库解决的）
+
+ 其中的注意点
+ 1: 保留install方法，install方法是向Vue中注册组件使用个的。
+ **/
+
 var Componnets = require('../../components.json');
 var fs = require('fs');
 var render = require('json-templater/string');
