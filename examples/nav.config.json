@@ -4,7 +4,7 @@
       "name": "components",
       "groups": [
         {
-          "groupName": "Notice",
+          "groupName": "Basic",
           "list": [
             {
               "path": "/alert",

@@ -1,24 +1,23 @@
 const navConfig = require('./nav.config');
 const langs = require('./i18n/route');
 
-// 不清楚这个部分是用来干嘛的
 const LOAD_MAP = {
     'zh-CN': name=>{
         return r => require.ensure([],()=> // webpack require.ensure
             r(require(`./pages/zh-CN/${name}.vue`)),
-            error=>console.error(error),
+            error => console.error(error),
             'zh-CN');
     }
 };
 
-const load = (lang,componentName)=>{
-    return LOAD_MAP[lang](componentName);
+const load = (lang,name)=>{
+    return LOAD_MAP[lang](name);
 };
 
 const LOAD_DOCS_MAP = {
-    'zh-CN':name=>{
+    'zh-CN':path=>{
         return r => require.ensure([],()=>
-            r(require(`./docs/zh-CN${name}.md`)),
+            r(require(`./docs/zh-CN${path}.md`)), // path for example: '/alert'
             error => console.error(error),
             'zh-CN');
     }
@@ -29,29 +28,30 @@ const loadDocs = function (lang,path) {
 };
 
 const registerRoute = navConfig => {
-    let route = [];
+    let route = []; // to save route's info
     Object.keys(navConfig).forEach((lang,index) => {
         let navs = navConfig[lang];
-        route.push({ // 这里是vue的路由配置形式
+        // pages下的component.vue组件是起什么作用的
+        route.push({
             path:`/${lang}/component`,
-            redirect:`${lang}/component/alert`,
+            redirect:`${lang}/component/`,
             component:load(lang,'component'),
             children:[]
         });
 
         navs.forEach(nav=>{
-            if(nav.groups){
+            if(nav.groups){// 如果nav.groups存在，则说明这个部分是控件组部分
                 nav.groups.forEach(group=>{
                     group.list.forEach(nav =>{
                         addRoute(nav,lang,index);
-                    })
-                })
+                    });
+                });
             };
-        })
+        });
     });
 
     function addRoute(page, lang, index){
-        const component = loadDocs(lang,page.path);
+        const component = loadDocs(lang,page.path); // 这里最好打上断点查看数据形式
         let child = {
             path: page.path.slice(1),
             meta:{
@@ -62,11 +62,11 @@ const registerRoute = navConfig => {
             name: 'component-' + lang + (page.title || page.name),
             component: component.default || component
         }
-        route[index].children.push(child);
+        route[index].children.push(child); // component.default这里指的是什么？
     };
 
-    return route;
-}
+    return route;// 返回存储的路由信息  
+};
 
 let route = registerRoute(navConfig); // add components routes
 
