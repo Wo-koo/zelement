@@ -1,5 +1,6 @@
 /* 
-用来生成css文件的
+gen-cssfile.js is to generate the css or scss files dependency on Components.json file.
+we use build:theme to create css or scss files automately 
 **/
 
 const fs = require('fs');
