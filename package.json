@@ -6,6 +6,7 @@
   "scripts": {
     "bootstrap": "npm i",
     "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
+    "build:theme":"node build/bin/gen-cssfile.js",
     "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js",
     "dev": "npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js && node build/bin/template.js",
     "dev:node": "node --inspect-brk=8085 ./node_modules/.bin/webpack --config build/webpack.demo.js",
