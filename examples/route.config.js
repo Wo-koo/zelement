@@ -72,10 +72,10 @@ let route = registerRoute(navConfig); // add components routes
 
 const generateMiscRoutes = function(lang){
     let indexRoute = {
-        path: `/${lang}`, // 首页
+        path: `/${lang}`,
         meta: {lang},
         name: 'home' + lang,
-        component: load(lang,'index')
+        component: load(lang,'index') // 加载首页
     }
 }
 
