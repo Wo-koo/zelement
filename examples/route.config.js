@@ -64,7 +64,6 @@ const registerRoute = navConfig => {
         }
         route[index].children.push(child); // component.default这里指的是什么？
     };
-
     return route;// 返回存储的路由信息  
 };
 
@@ -77,7 +76,8 @@ const generateMiscRoutes = function(lang){
         name: 'home' + lang,
         component: load(lang,'index') // 加载首页
     }
-}
+    return [indexRoute];
+};
 
 langs.forEach(lang=>{
     route = route.concat(generateMiscRoutes(lang.lang));
@@ -86,17 +86,14 @@ langs.forEach(lang=>{
 route.push({
     path: '/play',
     name: 'play',
-    component: require('./play/index')
+    component: require('./play/index.vue') //这个地方实际上是component:require('./play/index.vue)但是无法正常加载。原因有待分析
 });
 
-const defaultPath = '/zh-CN';
+let defaultPath = '/zh-CN';
 
-route = route.concat([{
-    path: '/',
-    redirect: defaultPath
-  }, {
-    path: '*',
-    redirect: defaultPath
-  }]);
+route = route.concat([
+    {path: '/', redirect: defaultPath},
+    {page: '*', redirect: defaultPath}
+]);
 
 export default route;
