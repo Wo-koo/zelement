@@ -86,7 +86,8 @@ langs.forEach(lang=>{
 route.push({
     path: '/play',
     name: 'play',
-    component: require('./play/index.vue') //这个地方实际上是component:require('./play/index.vue)但是无法正常加载。原因有待分析
+    component: resolve=> require(['./play/index.vue'],resolve) //这个地方实际上是component:require('./play/index.vue)但是无法正常加载。原因有待分析
+    // component: require('./play/index.vue') //这个地方实际上是component:require('./play/index.vue)但是无法正常加载。原因有待分析
 });
 
 let defaultPath = '/zh-CN';

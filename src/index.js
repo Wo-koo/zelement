@@ -12,7 +12,7 @@ const components = [
 
 const install = function(Vue,opts={}){
     //locale.use(opt.locale);
-    //locale.i18n(opt.i18n);//这里要搞清楚什么是i18n
+    //locale.i18n(opt.i18n);//i18n is to make international things.
 
     components.forEach(component=>{
         Vue.component(component.name,component);
@@ -35,20 +35,16 @@ const install = function(Vue,opts={}){
     // Vue.prototype.$message = Message;
 };
 
-/* istanbul ignore if */
+/* istanbul ignore if */ // 这部分的代码是进行代码覆盖时的ignore的标识
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
-  console.log('install function done');
-}
-else{
-  console.log('install function fails');
 }
 
 export default {
   version: '0.1.19',
   // locale: locale.use,
   // i18n: locale.i18n,
-  install,
+  install, // install 这个语句是必须的，用于向vue中注入组件
   // CollapseTransition,
   // Loading,
   Alert,

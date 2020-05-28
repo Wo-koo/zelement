@@ -8,7 +8,7 @@
  1: 保留install方法，install方法是向Vue中注册组件使用个的。
  **/
 
-var Componnets = require('../../components.json');
+var Components = require('../../components.json');
 var fs = require('fs');
 var render = require('json-templater/string');
 var uppercamelcase = require('uppercamelcase');
@@ -70,7 +70,7 @@ export default {
 
 delete Components.font; // delete remove font property from Components
 
-var ComponentNames = Object.keys(components);
+var ComponentNames = Object.keys(Components);
 var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
