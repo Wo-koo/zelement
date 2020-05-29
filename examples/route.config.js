@@ -94,7 +94,7 @@ let defaultPath = '/zh-CN';
 
 route = route.concat([
     {path: '/', redirect: defaultPath},
-    {page: '*', redirect: defaultPath}
+    {path: '*', redirect: defaultPath}
 ]);
 
-export default route;
+ export default route;
