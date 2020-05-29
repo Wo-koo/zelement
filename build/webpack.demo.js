@@ -10,7 +10,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
-const isPlay = process.env.PLAY_ENV;
+const isPlay = !!process.env.PLAY_ENV;
 
 const webpackConfig = {
     mode: process.env.NODE_ENV,
