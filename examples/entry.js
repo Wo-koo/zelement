@@ -4,9 +4,11 @@ import VueRouter from 'vue-router';
 import ZElement from 'main/index.js';
 import entry from './app';
 import routes from './route.config';
+import MainHeader from './components/header';
 
 Vue.use(ZElement);
 Vue.use(VueRouter);
+Vue.component('main-header',MainHeader);
 
 // create the router instance and pass the 'routes' option
 const router = new VueRouter({

@@ -25,9 +25,6 @@
 
 <script>
 export default {
-    data(){
-
-    },
     computed:{
         lang(){
             return this.$route.path.split('/')[1] || 'zh-CN';
