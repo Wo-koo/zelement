@@ -34,7 +34,7 @@ const registerRoute = navConfig => {
         // pages下的component.vue组件是起什么作用的
         route.push({
             path:`/${lang}/component`,
-            redirect:`${lang}/component/`,
+            redirect:'/',
             component:load(lang,'component'),
             children:[]
         });
