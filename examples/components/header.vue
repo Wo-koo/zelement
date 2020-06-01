@@ -20,7 +20,9 @@
             float: right;
             height: 100%;
             line-height: 80px; // 这个line-height是什么属性？
-            background-color: greenyellow;
+            background:transparent;
+            padding: 0;
+            margin: 0;
             &::before, &::after{
                 display: table;
                 content: "";
@@ -39,6 +41,21 @@
                 text-decoration: none;
                 color: #1989FA;
                 padding: 0 22px;
+                opacity: 0.5;
+                &.active, &:hover{
+                    opacity: 1;
+                }
+
+                &.active::after{
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 0;
+                    left: calc(50%-15px);
+                    width: 30px;
+                    height: 2px;
+                    background-color: #409EEF;
+                }
             }
         }
     }
