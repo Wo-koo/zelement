@@ -28,7 +28,7 @@
                 content: "";
             }
             &::after{
-                clear: both;
+                clear: both;// 这个clear也不太清楚起到的是什么作用
             }
         }
         .nav-item{
