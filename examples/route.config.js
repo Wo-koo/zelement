@@ -5,7 +5,6 @@ const LOAD_MAP = {
     'zh-CN': name=>{
         return r => require.ensure([],()=> // webpack require.ensure
             r(require(`./pages/zh-CN/${name}.vue`)),
-            error => console.error(error),
             'zh-CN');
     }
 };
@@ -31,14 +30,12 @@ const registerRoute = navConfig => {
     let route = []; // to save route's info
     Object.keys(navConfig).forEach((lang,index) => {
         let navs = navConfig[lang];
-        // pages下的component.vue组件是起什么作用的
         route.push({
             path:`/${lang}/component`,
-            redirect:'/',
-            component:load(lang,'component'),
+            component:load(lang,'component'),//
             children:[]
         });
-
+        // add children routes of above
         navs.forEach(nav=>{
             if(nav.groups){// 如果nav.groups存在，则说明这个部分是控件组部分
                 nav.groups.forEach(group=>{
