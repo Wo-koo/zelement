@@ -8,6 +8,7 @@
         width: 100%;
         position: relative;
         .container{
+            height: 100%;
             box-sizing: border-box;
             border-bottom: 1px solid #DCDFE6;
             .logo{
@@ -49,9 +50,9 @@
                 &.active::after{
                     content: "";
                     display: inline-block;
-                    position: absolute;
+                    position: absolute; 
                     bottom: 0;
-                    left: calc(50%-15px);
+                    left: calc(50% - 15px);
                     width: 30px;
                     height: 2px;
                     background-color: #409EEF;
@@ -76,7 +77,7 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link acctive-class="active" 
+                        <router-link active-class="active" 
                         :to="`/${ lang }/component`">
                         {{langConfig.components}}
                         </router-link>
