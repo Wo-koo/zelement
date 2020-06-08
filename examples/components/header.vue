@@ -52,8 +52,8 @@
                     display: inline-block;
                     position: absolute; 
                     bottom: 0;
-                    //left: calc(50% - 5%); // 50%是获取其ancestor's left
-                    width: 100%;
+                    left: calc(50% - 15px); // 50%是获取其ancestor's left
+                    width: 30px;
                     height: 2px;
                     background-color: #409EEF;
                 }
