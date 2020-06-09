@@ -5,10 +5,14 @@ import ZElement from 'main/index.js';
 import entry from './app';
 import routes from './route.config';
 import MainHeader from './components/header';
+import SideNav from './components/side-nav';
+import ElementUI from 'element-ui';
 
 Vue.use(ZElement);
+Vue.use(ElementUI);// temp use ElementUI API
 Vue.use(VueRouter);
 Vue.component('main-header',MainHeader);
+Vue.component('side-nav',SideNav);
 
 // create the router instance and pass the 'routes' option
 const router = new VueRouter({

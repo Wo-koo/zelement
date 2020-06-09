@@ -1,13 +1,29 @@
-<style lang="scss">
+<style scoped>
 
 </style>
 <template>
-<div>
-    Components
-</div>
+    <el-scrollbar class="page-component_scroll" ref="componentScrollBar">
+        <div class="page-container page-component">
+            <el-scrollbar class="page-component_nav">
+                <side-nav :data="navConfig[lang]" :base="lang"></side-nav>
+            </el-scrollbar>
+            <div class="page-component_content">
+                <router-view class="content"></router-view>
+            </div>
+            <el-backtop>
+            </el-backtop>
+        </div>
+    </el-scrollbar>
 </template>
 <script>
+import navConfig from '../../nav.config.json';
+
 export default {
-    
+    data(){
+        return{
+            lang:this.$route.meta.lang || 'zh-CN',
+            navConfig,
+        }
+    }
 }
 </script>
