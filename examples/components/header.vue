@@ -1,6 +1,10 @@
 <style lang="scss" scope>
     .headerWrapper{
+        width:100%;
         height: 80px;
+        box-sizing: border-box;
+        position: fixed;
+        top:0;
     }
     .header{
         height: 80px;

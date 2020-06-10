@@ -2,19 +2,25 @@
 .page-component_scroll{
     height: calc(100% - 80px);
     margin-top: 80px;
-
-    > .page-component_scroll{
-        overflow-x: auto;
-    }
 }
+
 .page-component{
     box-sizing: border-box;
     height: 100%;
 
     .page-component_nav{
-        width: 360px;
+        width: 240px;
         position: fixed;
-        overflow: auto;
+        margin-top: 80px;
+        top:0;
+        bottom:0;
+        overflow-y: auto;
+        transition: padding-top .3s;
+    }
+
+    .side-nav{
+        height: 100%;
+        padding-top: 50px;
     }
 }
 </style>
