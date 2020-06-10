@@ -1,5 +1,14 @@
-<style scoped>
+<style lang="scss">
+.page-component{
+    box-sizing: border-box;
+    height: 100%;
 
+    .page-component_nav{
+        width: 360px;
+        position: fixed;
+        overflow: auto;
+    }
+}
 </style>
 <template>
     <el-scrollbar class="page-component_scroll" ref="componentScrollBar">
