@@ -1,4 +1,12 @@
 <style lang="scss">
+.page-component_scroll{
+    height: calc(100% - 80px);
+    margin-top: 80px;
+
+    > .page-component_scroll{
+        overflow-x: auto;
+    }
+}
 .page-component{
     box-sizing: border-box;
     height: 100%;
