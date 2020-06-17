@@ -22,13 +22,19 @@
         height: 100%;
         padding-top: 50px;
     }
+
+    .page-component_content{
+        box-sizing: border-box;
+        padding-left: 270px;
+        padding-bottom: 100px;
+    }
 }
 </style>
 <template>
     <el-scrollbar class="page-component_scroll" ref="componentScrollBar">
         <div class="page-container page-component">
             <el-scrollbar class="page-component_nav">
-                <side-nav :data="navConfig[lang]" :base="lang"></side-nav>
+                <side-nav :data="navConfig[lang]" :base="`/${lang}/component`"></side-nav>
             </el-scrollbar>
             <div class="page-component_content">
                 <router-view class="content"></router-view>

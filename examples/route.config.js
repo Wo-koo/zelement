@@ -60,7 +60,8 @@ const registerRoute = navConfig => {
             component: component.default || component
         }
         route[index].children.push(child); // component.default这里指的是什么？
-    };
+    }
+
     return route;// 返回存储的路由信息  
 };
 
@@ -94,4 +95,4 @@ route = route.concat([
     {path: '*', redirect: defaultPath}
 ]);
 
- export default route;
+export default route;
