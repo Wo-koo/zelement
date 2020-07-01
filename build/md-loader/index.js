@@ -10,9 +10,9 @@ const md = require('./config');
 module.exports = function(source){
     const content = md.render(source);
 
-    const startTag = '<!--element-demo:';
+    const startTag = '<!--zelement-demo:';
     const startTagLen = startTag.length;
-    const endTag = ':element-demo-->';
+    const endTag = ':zelement-demo-->';
     const endTagLen = endTag.length;
 
     let componentsString = "";
@@ -29,7 +29,7 @@ module.exports = function(source){
         const html = stripTemplate(commentContent);
         const script = stripScript(commentContent);
         let demoComponentContent =  generatorInLineComponentText(html,script);
-        const demoComponentName = `element-demo${id}`;
+        const demoComponentName = `zelement-demo${id}`;
 
         output.push(`<template slot="source"><${demoComponentName}/></template>`);
         componentsString += `$JSON.stringify(demoComponentName)}:${demoComponentContent},`;
@@ -60,7 +60,7 @@ module.exports = function(source){
     output.push(content.slice(start));
     return `
     <template>
-        <section class="content element-doc">
+        <section class="content zelement-doc">
             ${output.join('')}
         </section>
     </template>
