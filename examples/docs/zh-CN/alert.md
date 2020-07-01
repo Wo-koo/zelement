@@ -5,6 +5,7 @@
 ## 基本用法
 
 :::demo Alert 组件提供四种主题，由`type`属性指定，默认值为`info`。
+
 ```html
 <template>
   <z-alert
